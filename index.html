@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poids Planetaire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Poids Planetaire</h1>
+        <h2>Comment fonctionne la gravité sur les autres planètes? </h2>
+    </header>
+
+    <!-- table des matieres -->
+    <nav>
+        <ul>
+            <li><a href="#about">C’est quoi, la gravité?</a></li>
+            <li><a href="#how-it-works">Comment est-ce que la gravité diffère sur les autres planètes?</a></li>
+            <li><a href="#calculator">Calculatrice Interactif</a></li>
+            <li><a href="#gravity-table">Comparer la gravité sur les planètes</a></li>
+            <li><a href="#sources">Sources</a></li>
+        </ul>
+    </nav>
+
+    <!-- bienvenue -->
+    <section id="introduction" class="info">
+        <div class="content-container">
+            <h2>Bienvenue!</h2>
+            <p>La gravité est la force qui tient notre planète ensemble, qui explique la plupart des phénomènes de la belle terre. Mais il n'est pas seulement ici; la gravité tient même tout l'univers ensemble et n'importe quel corps céleste le contient. Les lunes, les autres planètes… on le trouve partout! Malgré ça, ce n'est pas exactement la même que sur la terre. Comment? Ça c'est le sujet de mon étude. Sur ce site, tu vas découvrir comment la gravité diffère sur les différentes planètes et tu peux même voir comment tu pèserais sur les autres planètes de la Voie Lactée!</p>
+        </div>
+    </section>
+
+    <!-- infos -->
+    <section id="about" class="info">
+        <div class="content-container">
+            <h2>C’est quoi, la gravité?</h2>
+            <p>Premièrement, comment fonctionne exactement la gravité? On sait qu’elle est la force qui nous garde sur la terre, mais comment? C’est expliqué par la loi de la gravitation universelle d'Isaac Newton; Newton explique que tous les objets de l’univers attirent tous les autres objets de l’univers. Alors pourquoi est-ce que nous ne nous attirons pas? C’est expliqué par la deuxième partie de la loi, qui déclare que la force à laquelle les objets s’attirent est proportionnelle à leurs masses.  Nos masses sont si faibles contrairement aux autres forces, comme la gravité de la terre, alors nous ne pouvons pas s’attirer comme ça. </p>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="info">
+        <div class="content-container">
+            <h2>Comment est-ce que la gravité diffère sur les autres planètes?</h2>
+            <p></p>As-tu jamais vu une vidéo d’un astronaute sur la lune?  Est-ce que tu as vu comment ils flottent? Ca c’est parce qu’ils sont plus légers sur la lune! Les poids existent à cause de la gravité, alors la gravité différente veut dire des poids différents. Voici un exemple!
+            <br>
+            <br>Poids d’un éléphant sur la Terre: 12000 lbs
+            <br>Poids d’un elephant sur la Lune: 1980 lbs
+            <br>
+            <br>
+            Tu vois la différence? Ses poids sont plus petits sur la lune car il y a moins de gravité. Souviens-toi de la loi de Newton: moins de masse égale moins de force gravitationnelle, et la Lune a moins de masse que la Terre! Celle est appliquée aux autres planètes aussi. 
+            
+        </div>
+    </section>
+
+    <section id="calculator" class="calculator">
+        <h2>Calculatrice interactif</h2>
+        <form id="gravityForm">
+            <label for="earthWeight">Entre tes poids en kg:</label>
+            <input type="number" id="earthWeight" required min="1">
+
+            <label for="planetSelect"><br>Choisis une planète:</label>
+            <select id="planetSelect">
+                <option value="Mercure">Mercure</option>
+                <option value="Vénus">Vénus</option>
+                <option value="Terre">Terre</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturne">Saturne</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+            </select>
+
+            <button type="button" onclick="calculateGravity()">Calcule tes poids</button>
+        </form>
+
+        <div id="result">
+            <h3>Tes poids sur la planète choisi:</h3>
+            <p id="weightResult">Entre tes poids et selecte une planète.</p>
+        </div>
+    </section>
+
+    <!-- comparer -->
+    <section id="gravity-table" class="planet-gravity-table">
+        <h2>Comparer la gravité sur les planètes</h2>
+        <table id="planet-table">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Planètes</th>
+                    <th onclick="sortTable(1)">Gravité en m/s²</th>
+                    <th onclick="sortTable(2)">Multiplicateur (comparé avec Terre)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mercure</td>
+                    <td>3.7</td>
+                    <td>0.38</td>
+                </tr>
+                <tr>
+                    <td>Vénus</td>
+                    <td>8.9</td>
+                    <td>0.91</td>
+                </tr>
+                <tr>
+                    <td>Terre</td>
+                    <td>9.8</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Mars</td>
+                    <td>3.7</td>
+                    <td>0.38</td>
+                </tr>
+                <tr>
+                    <td>Jupiter</td>
+                    <td>23.1</td>
+                    <td>2.34</td>
+                </tr>
+                <tr>
+                    <td>Saturne</td>
+                    <td>9.0</td>
+                    <td>0.93</td>
+                </tr>
+                <tr>
+                    <td>Uranus</td>
+                    <td>8.7</td>
+                    <td>0.92</td>
+                </tr>
+                <tr>
+                    <td>Neptune</td>
+                    <td>11.0</td>
+                    <td>1.12</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Sources -->
+    <section id="sources">
+        <h2>Sources</h2>
+        <ul>
+            <li><a href="https://www.alloprof.qc.ca/fr/eleves/bv/sciences/la-gravitation-universelle-s1388">Alloprof - La gravitation universelle</a></li>
+            <li><a href="https://www.alloprof.qc.ca/fr/eleves/bv/physique/la-force-gravitationnelle-p1019">Alloprof - La force gravitationelle</a></li>
+            <li><a href="https://www.quebecscience.qc.ca/14-17-ans/encyclo/la-gravite-une-force-attirante/">Quebec Science - La gravité: une force attirante</a></li>
+            <li><a href="https://www.physicsoftheuniverse.com/calculator/weight_planets.html">The Physics of the Universe - Weight on other planets</a></li>
+            <li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/">NASA - Planetary Fact Sheet</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Une site par Brianna | Poids Planetaire</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
